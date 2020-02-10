@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: thistle;
+  height: 100vh;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+body .container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: [c-inicio] 500px [c-registers] 1fr [c-status] 1fr [c-fin];
+  grid-template-rows: [r-inicio] minmax(30px, 60px) [r-content] 1fr [r-fin];
+  grid-auto-flow: row;
+}
+
+.container ul {
+  list-style: none;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.form .form-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-content input,
+.form-content button {
+  width: 160px;
+  height: auto;
+}
+
+.form-content input {
+  border-style: none;
+  margin: 10px;
+}
+
+.register {
+  padding-left: 50px;
+  height: 100vh;
+  overflow: auto;
+  grid-column: c-inicio / c-registers;
+  grid-row: r-inicio / r-content;
+}
+
+.datos {
+  padding-right: 50px;
+  height: 100vh;
+  overflow: auto;
+  grid-column: c-registers / c-fin;
+  grid-row: r-inicio / r-content;
+}
+
+.card {
+  background: white;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.card em {
+  color: greenyellow;
+}

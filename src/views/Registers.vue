@@ -1,32 +1,31 @@
 <template>
-  <div class="about">
-    <h1>Registros</h1>
-    <div>
-      <p>{{ item.day }}</p>
-      <input type="date" v-model="item.day" />
-      <button @click="createRegister">Crear</button>
-    </div>
-    <div>
+  <div class="container">
+    <div class="register">
+      <div class="form">
+        <h1>Registros</h1>
+        <div class="form-content">
+          <input type="date" v-model="item.day" />
+          <br />
+          <button @click="createRegister">Crear</button>
+        </div>
+      </div>
       <ul>
         <li
+          class="card"
           v-for="(register, i) in $store.state.registers"
           :key="i"
           @click="findItem(i)"
         >
           <p>
             Fecha:
-            <strong>
-              {{ `${register.day}` }}
-            </strong>
+            <strong>{{ `${register.day}` }}</strong>
             || Estado:
-            <strong>
-              {{ `${register.status}` }}
-            </strong>
+            <strong>{{ `${register.status}` }}</strong>
           </p>
         </li>
       </ul>
     </div>
-    <display-datos />
+    <display-datos class="datos" />
   </div>
 </template>
 <script>

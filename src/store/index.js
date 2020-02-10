@@ -29,7 +29,9 @@ export default new Vuex.Store({
   },
   actions: {
     CREATE_NOTIFICATION_PUSH({ state, commit }, { uuid, resource }) {
-      resource.name = "Jeesuuus";
+      resource[
+        "name"
+      ] = `Dato: ${resource.number} || Hora:${resource.time} ${resource.format}`;
       Axios({
         method: "post",
         url: "https://fcm.googleapis.com/fcm/send",
